@@ -1,0 +1,65 @@
+server:
+  port: 8888
+
+encrypt:
+  key: "1RcPaASmvqRHP0/d9zgYoUSaGLBseGEsVJhNi8mwnGE="
+  
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+      
+        enabled: true
+        native:
+          search-locations:
+          - classpath:/config
+  profiles:
+    active: native
+
+eureka:
+  client:
+    # To report to Eureka when this service is up
+    registerWithEureka: true
+    # Eureka server URL
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://discovery-service:8761/eureka}
+  instance:
+    # To avoid using DNS
+    prefer-ip-address: true
+
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  info:
+    env:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+# App metadata
+info:
+  app:
+    name: Config Server
+    description: A simple configuration server
+    version: 1.0.0
+  company:
+    name: Fussion Tech
+    contact:
+      email: devops@fussiontech.com
+      phone: +573043763821
+  build:
+    time: ${BUILD_TIME:2024-08-21T12:30:00Z}

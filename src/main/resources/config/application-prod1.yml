@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://10.43.101.72:8761/eureka}
+    # To report to Eureka when this service is up discovery-service
+    registerWithEureka: true
+  instance:
+    ip-address: 10.43.101.55
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+firebase:
+  type: 'service_account'
+  project_id: 'allconnected-p'
+  private_key_id: 'f3f6f0bb38011a6a0372d4c52699b0992979b385'
+  private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDaLBwJHooB8B9k\nRxp3X+DnBhlLDWux4IKjdVFF+mRwK4yYyalMZKRySJn+wBSMCpCTGlmTqf4aghDe\nJom8QT4p/wVGTaQDEDASUOhPgHkItaJkKRCozSpn9Pd9o1DQ3K+yKNH0d0SFrtTk\nb7uX03qHSKCM3JhJmc6rWgym1jHEGCNmLKXwYq6pHigiOVx1A6DZXia1MgwNZ8Vo\n25M6IMoz0oF5vVmb+yIQlxvn9DMqI+u5gvWFoUkN3pN4G76dq1Sh62mZnCpSKB4P\nu70pITueVu0M5srmdn/ugbqZzep7Hdnu2o9efCU0oEYZW2nJozS3IAasXdDb/AaJ\nf6OKx5BtAgMBAAECggEAM81vZrbqm+Uw/vVnElsgopovHUP1g0nEmx07C/uVJ5Ef\nlBOl8C6hYUVd00A2YL4Nb/A8vrQJUq/5Y1YRNDLlmMEltniu7c9FKsQtNNtTYb8G\n7PNXMk1suTxQG3PQt5b+3LWWjI5ZJcjKYecpyrX7DO4wuOGUAz3S9ZqvEFohfOay\nHHKsrk2TSnhCz79OPEx+ddg5doUNH1aw7YYPu7fSbqdBw0mjRGZ2l9C17JimkcA9\neiVUXI/BfPHwhK8FVtbypjuewQabk6xWg9cQgAd6/EuRGNBQwzZbbAKUyRY06lxP\nOsk5KmgrLyG+bqxwlgZ0uzKqrGJLaLSjU5Ql4mdEwQKBgQDvAhYgjqBqQHzfJi1y\nKnLHPxNxWRcka+Br6kXD5UyEOvtzDqbWxefg4VnXreLpF0rX1hgId8EerngKcONI\nr5/9oceVhBb0pkQ18X3FVWAMVdu2FMGtDRBGeWUrcke1WS02OR8esdAi8VCRP5wu\nqN3OH8jdlPlQ024TOO9ATbwh0QKBgQDprtBN7LP6Ryze1w/Y7NSNKfvA0GykJBcI\nFuijbR5mmo/yU6vIJTHBb1hqY5TU90+83uFZ5fqmxDlaJeCHExJXEDmYBqA6t6eG\n66DJM9CImfS33BJ3uxw/oxwNdQbfsPK8TZqanXtV/tu7OhJr3aYU0SkZR+AWGlqn\njXFaS9kv3QKBgQDEwUPz81YNgh8KGMSqylUIv11DH2NUwVXToN1j4dz2shOT6Ujh\nX7R+xSUPz38QAfPD8OSB/AvINTpu5fXFPYcI5eiGpmG7bzCR88Zk796M6RVhNH8n\n9awjSAZIGOD9Ync8vxNmUl0UlvGLUQFCzBMkf7f86YnAxv1D58fVeOjaMQKBgQCe\nedSAlD82Q2C1u0nfBjXbihZWm8KhymvoK4kXk9/jG3z1jTLZaAgHM9jVRbVgfFwS\nLWDMk7/ZqwduEHPlhtSQQMueQxgU2gn94PxIlyAcE7S3n8LSeg1dRuO2aKABwcHM\nXCC2LIjBODaSEX7+sfF4+qQRpgHdW4ARU0YFQ50F7QKBgBvXo0uZ9gYPTB2+tfhq\n/UZsZotP8GcfW+XeWY40Wvu2USvzGtShViz6HzyYQmr+TtfjsAKDixvPUpQO0baP\nFvxJKHjdHdMV1E8LdaIoi72k9NZRs5bSurvaoczE6xupZo6xqCjP2/qieCX3I7CB\naFZrJP4dISOHpivG+xCN+fj7\n-----END PRIVATE KEY-----\n"
+  client_email: 'firebase-adminsdk-tfcg3@allconnected-p.iam.gserviceaccount.com'
+  client_id: '107293884766025263429'
+  auth_uri: https://accounts.google.com/o/oauth2/auth
+  token_uri: https://oauth2.googleapis.com/token
+  auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+  client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tfcg3%40allconnected-p.iam.gserviceaccount.com'
+  universe_domain: googleapis.com
