@@ -1,3 +1,0 @@
-spring:
-  datasource:
-    url: 'jdbc:postgresql://ep-autumn-shape-a51h6m0r.us-east-2.aws.neon.tech/products'

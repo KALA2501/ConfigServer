@@ -1,7 +1,0 @@
-spring:
-  datasource:
-    url: 'jdbc:postgresql://pgpool:5432/services'
-
-eureka:
-  instance:
-    non-secure-port: 8091
