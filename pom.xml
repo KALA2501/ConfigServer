@@ -12,7 +12,7 @@
 	<artifactId>config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>config-server</name>
-	<description>Config server for All Connected</description>
+	<description>Config server for Kala</description>
 	<url/>
 	<licenses>
 		<license/>

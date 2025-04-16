@@ -1,18 +1,14 @@
-server:
-  port: 8080
-
 spring:
-  application:
-    name: api-gateway
-
   cloud:
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins: "*"
+            allowed-origin-patterns:
+              - "http://localhost:3000"
             allowed-methods:
               - GET
               - POST
@@ -26,18 +22,20 @@ spring:
         - id: usuarios-service
           uri: lb://usuarios-service
           predicates:
-            - Path=/kala/usuarios/api/**
-          filters:
-            - RewritePath=/kala/usuarios/(?<segment>.*), /$\{segment}
+            - Path=/api/**
 
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
+management:  
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
