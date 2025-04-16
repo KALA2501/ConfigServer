@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: api-gateway
+
   cloud:
     gateway:
       default-filters:
@@ -11,11 +12,7 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins:
-              - "http://localhost:3000"
-              - "http://10.43.101.114:3000"
-              - "http://10.43.101.176:3000"
-              - "http://10.43.101.82:3000"
+            allowed-origins: "*"
             allowed-methods:
               - GET
               - POST
@@ -24,6 +21,7 @@ spring:
               - OPTIONS
             allowed-headers: "*"
             allow-credentials: true
+
       routes:
         - id: usuarios-service
           uri: lb://usuarios-service
@@ -31,6 +29,7 @@ spring:
             - Path=/kala/usuarios/api/**
           filters:
             - RewritePath=/kala/usuarios/(?<segment>.*), /$\{segment}
+
       discovery:
         locator:
           enabled: true
@@ -39,6 +38,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URL}
+      defaultZone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
