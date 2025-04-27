@@ -1,9 +1,17 @@
+server:
+  port: 8080
+
 spring:
+  application:
+    name: api-gateway
+
   cloud:
+    config:
+      uri: http://config-server:8888
+      fail-fast: true
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
-
       globalcors:
         cors-configurations:
           '[/**]':
@@ -27,9 +35,9 @@ spring:
       discovery:
         locator:
           enabled: true
-          lowerCaseServiceId: true
+          lower-case-service-id: true
 
-management:  
+management:
   endpoints:
     web:
       exposure:
@@ -39,3 +47,10 @@ management:
       enabled: true
     health:
       show-details: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
