@@ -6,7 +6,7 @@ spring:
     name: usuarios-service
 
   datasource:
-    url: jdbc:mysql://localhost:3307/microserviciousuario
+    url:  jdbc:mysql://mysql:3306/kala
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
