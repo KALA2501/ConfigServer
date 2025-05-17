@@ -61,6 +61,14 @@ spring:
           predicates:
             - Path=/api/formularios/**
 
+        - id: juegos-service
+          uri: http://juegos-service:9094
+          predicates:
+            - Path=/api/juegos/**
+
+          filters:
+            - StripPrefix=2
+
       discovery:
         locator:
           enabled: true
