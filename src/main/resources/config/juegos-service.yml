@@ -1,0 +1,18 @@
+server:
+  port: 9094
+
+juegos:
+  base-path: /games
+  metrics-endpoint: /send-metrics/{juego}
+  websocket-port: 9095
+
+mysql:
+  host: mysql             # nombre del contenedor o servicio en docker-compose
+  port: 3306
+  database: kala
+  user: root
+  password: admin
+
+logging:
+  level:
+    juegos-service: DEBUG
