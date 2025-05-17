@@ -30,7 +30,7 @@ spring:
 
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
-        - AddResponseHeader=X-Frame-Options, ALLOWALL   # ✅ Esto fuerza permitir iframes
+        - AddResponseHeader=X-Frame-Options, ALLOWALL  # ✅ Permitir iframes
 
       globalcors:
         cors-configurations:
@@ -67,7 +67,7 @@ spring:
           predicates:
             - Path=/api/juegos/**
           filters:
-            - StripPrefix=2
+            - RewritePath=/api/juegos/(?<segment>.*), /games/${segment}
 
       discovery:
         locator:
