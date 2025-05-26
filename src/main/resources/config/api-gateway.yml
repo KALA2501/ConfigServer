@@ -71,6 +71,11 @@ spring:
           filters:
             - RewritePath=/api/juegos/(?<segment>.*), /games/${segment}
 
+        - id: metricas-service
+          uri: lb://metricas-service
+          predicates:
+            - Path=/api/metricas/**
+
       discovery:
         locator:
           enabled: true
